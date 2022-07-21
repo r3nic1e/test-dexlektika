@@ -13,3 +13,4 @@ Test task for Dexlektika interview
 You should provide ConfigMap or Secret via `envFrom` with application settings:
 
 - `DB_ADDR` - DSN for connecting to postgres
+- `LISTEN_ADDR` - address to listen

@@ -87,4 +87,6 @@ envFrom:
   - configMapRef:
       name: blabla
 
-postgresql: {}
+postgresql:
+  readReplicas:
+    replicaCount: 1

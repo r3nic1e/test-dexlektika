@@ -15,7 +15,7 @@ func (app *App) ConnectDB(dsn string) error {
 		return err
 	}
 
-	app.db = db
+	app.db = db.Debug()
 	err = app.migrate()
 	if err != nil {
 		log.Printf("Failed to migrate schema: %v", err)
