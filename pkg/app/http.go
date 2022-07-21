@@ -52,10 +52,9 @@ func (app *App) isDenylisted(request *http.Request) bool {
 		return true
 	}
 
-	model := &models.DenylistedIP{IP: ip}
-	result := app.db.First(model)
-
-	return result.RowsAffected > 0
+	var count int64
+	app.db.Model(&models.DenylistedIP{}).Where("ip = ?", ip).Count(&count)
+	return count > 0
 }
 
 func (app *App) squareHandler(response http.ResponseWriter, request *http.Request) {
