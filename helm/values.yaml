@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: bla
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/r3nic1e/test-dexlektika
+  pullPolicy: Always
   tag: latest
 
 imagePullSecrets: []
@@ -36,7 +36,7 @@ service:
   port: 80
 
 ingress:
-  enabled: true
+  enabled: false
   className: ""
   annotations:
     {}

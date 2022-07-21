@@ -32,7 +32,7 @@ func (app *App) denylistedHandler(response http.ResponseWriter, request *http.Re
 		return
 	}
 
-	result := app.db.Create(models.DenylistedIP{
+	result := app.db.Create(&models.DenylistedIP{
 		IP:       ip,
 		HTTPPath: request.RequestURI,
 	})
